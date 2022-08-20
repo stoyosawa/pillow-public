@@ -1,0 +1,234 @@
+<!-- This page is automatically generated. --->
+
+# README
+
+[「Python + Pillow/PIL - 画像の加工・補正・編集とその自動化」](http://cutt.co.jp/book/978-4-87783-525-5.html "link")（カットシステム、2022年9月）から次の内容を公開しています。
+
+- 目次
+- 使用したサンプル画像（[付録C](./C-Source.md "INTERNAL")）
+- 参考文献（[付録D](./D-References.md "INTERNAL")）
+- 取り上げた関数の定義（[付録E](./E-Signatures.md "INTERNAL")）
+- 本書に掲載したコードのリスト（[付録F](./F-Codes.md "INTERNAL")）
+
+本文の章節やスクリプトファイルへのリンクは、掲載していないので404になります。
+
+ご購入はこちらから: 【
+[出版社から](http://www.cutt.co.jp "LINK") |
+[honto](https://honto.jp "LINK") |
+[ヨドバシカメラ](https://www.yodobashi.com/ "LINK") |
+[amazon.co.jp](https://www.amazon.co.jp "LINK")
+】
+
+<img src="http://cutt.co.jp/book/images/978-4-87783-525-5.png" alt="表紙" width=200>
+
+## 目次
+
+- [第0章](./00-Introduction.md) はじめに
+	- [0.1節](./00-Introduction.md#01-注意事項) 注意事項
+		- [0.1.1節](./00-Introduction.md#011-パッケージ名) パッケージ名
+		- [0.1.2節](./00-Introduction.md#012-関数定義) 関数定義
+		- [0.1.3節](./00-Introduction.md#013-用例) 用例
+		- [0.1.4節](./00-Introduction.md#014-サンプルスクリプト) サンプルスクリプト
+		- [0.1.5節](./00-Introduction.md#015-サンプル画像) サンプル画像
+	- [0.2節](./00-Introduction.md#02-開発環境) 開発環境
+		- [0.2.1節](./00-Introduction.md#021-WSL) WSL
+		- [0.2.2節](./00-Introduction.md#022-オンライン環境) オンライン環境
+		- [0.2.3節](./00-Introduction.md#023-バージョン) バージョン
+		- [0.2.4節](./00-Introduction.md#024-その他ライブラリ) その他ライブラリ
+		- [0.2.5節](./00-Introduction.md#025-文字エンコーディング) 文字エンコーディング
+	- [0.3節](./00-Introduction.md#03-Pillowの作者について) Pillowの作者について
+- [第1章](./01-Terminology.md) 用語
+	- [1.1節](./01-Terminology.md#11-画像の構成) 画像の構成
+	- [1.2節](./01-Terminology.md#12-ピクセル値) ピクセル値
+	- [1.3節](./01-Terminology.md#13-カラーピクセル) カラーピクセル
+		- [1.3.1節](./01-Terminology.md#131-RGB) RGB
+		- [1.3.2節](./01-Terminology.md#132-HSV) HSV
+		- [1.3.3節](./01-Terminology.md#133-CMYK) CMYK
+		- [1.3.4節](./01-Terminology.md#134-アルファ) アルファ
+		- [1.3.5節](./01-Terminology.md#135-カラーパレット) カラーパレット
+	- [1.4節](./01-Terminology.md#14-バンド) バンド
+	- [1.5節](./01-Terminology.md#15-モード) モード
+	- [1.6節](./01-Terminology.md#16-画像ファイルフォーマット) 画像ファイルフォーマット
+	- [1.7節](./01-Terminology.md#17-マスク画像) マスク画像
+	- [1.8節](./01-Terminology.md#18-バウンディングボックス) バウンディングボックス
+	- [1.9節](./01-Terminology.md#19-フレーム) フレーム
+- [第2章](./02-OpenShowClose.md) 画像ファイルの入出力
+	- [2.1節](./02-OpenShowClose.md#21-画像ファイルを開いて表示) 画像ファイルを開いて表示
+		- [2.1.1節](./02-OpenShowClose.md#211-画像ファイルを開く) 画像ファイルを開く
+		- [2.1.2節](./02-OpenShowClose.md#212-画像を表示) 画像を表示
+		- [2.1.3節](./02-OpenShowClose.md#213-大きな画像) 大きな画像
+		- [2.1.4節](./02-OpenShowClose.md#214-画像オブジェクトを閉じる) 画像オブジェクトを閉じる
+		- [2.1.5節](./02-OpenShowClose.md#215-データの強制読み込み) データの強制読み込み
+	- [2.2節](./02-OpenShowClose.md#22-画像表示アプリケーションの変更) 画像表示アプリケーションの変更
+	- [2.3節](./02-OpenShowClose.md#23-画像ファイルフォーマット) 画像ファイルフォーマット
+		- [2.3.1節](./02-OpenShowClose.md#231-画像ファイルリスト) 画像ファイルリスト
+	- [2.4節](./02-OpenShowClose.md#24-画像ファイルの保存) 画像ファイルの保存
+		- [2.4.1節](./02-OpenShowClose.md#241-JPEGで保存) JPEGで保存
+		- [2.4.2節](./02-OpenShowClose.md#242-JpegPresets) JpegPresets
+		- [2.4.3節](./02-OpenShowClose.md#243-GIFで保存) GIFで保存
+		- [2.4.4節](./02-OpenShowClose.md#244-WebPで保存) WebPで保存
+		- [2.4.5節](./02-OpenShowClose.md#245-GIFからWebPへの変換) GIFからWebPへの変換
+		- [2.4.6節](./02-OpenShowClose.md#246-画像ファイルフォーマット一括変換) 画像ファイルフォーマット一括変換
+- [第3章](./03-Information.md) 画像の属性
+	- [3.1節](./03-Information.md#31-Image属性) Image属性
+	- [3.2節](./03-Information.md#32-属性取得関数) 属性取得関数
+	- [3.3節](./03-Information.md#33-統計情報) 統計情報
+	- [3.4節](./03-Information.md#34-画像ヒストグラム) 画像ヒストグラム
+		- [3.4.1節](./03-Information.md#341-最頻値) 最頻値
+		- [3.4.2節](./03-Information.md#342-エントロピー) エントロピー
+	- [3.5節](./03-Information.md#35-Exif) Exif
+		- [3.5.1節](./03-Information.md#351-Exifを用いた画像回転) Exifを用いた画像回転
+- [第4章](./04-NewImage.md) 画像の生成
+	- [4.1節](./04-NewImage.md#41-新規生成) 新規生成
+	- [4.2節](./04-NewImage.md#42-シーケンスと画像) シーケンスと画像
+		- [4.2.1節](./04-NewImage.md#421-バイトから画像) バイトから画像
+		- [4.2.2節](./04-NewImage.md#422-画像からバイト) 画像からバイト
+		- [4.2.3節](./04-NewImage.md#423-シーケンスの取得) シーケンスの取得
+		- [4.2.4節](./04-NewImage.md#424-シーケンスのセット) シーケンスのセット
+	- [4.3節](./04-NewImage.md#43-Numpyと画像) Numpyと画像
+		- [4.3.1節](./04-NewImage.md#431-画像からNumpy) 画像からNumpy
+		- [4.3.2節](./04-NewImage.md#432-Numpyから画像) Numpyから画像
+		- [4.3.3節](./04-NewImage.md#433-いろいろなパターン) いろいろなパターン
+	- [4.4節](./04-NewImage.md#44-コピーとペースト) コピーとペースト
+		- [4.4.1節](./04-NewImage.md#441-コピー) コピー
+		- [4.4.2節](./04-NewImage.md#442-矩形領域のコピー) 矩形領域のコピー
+		- [4.4.3節](./04-NewImage.md#443-ペースト) ペースト
+		- [4.4.4節](./04-NewImage.md#444-マスキング) マスキング
+	- [4.5節](./04-NewImage.md#45-特殊関数) 特殊関数
+		- [4.5.1節](./04-NewImage.md#451-グラデーション) グラデーション
+		- [4.5.2節](./04-NewImage.md#452-ガウスノイズ) ガウスノイズ
+		- [4.5.3節](./04-NewImage.md#453-マンデルブロ) マンデルブロ
+- [第5章](./05-Colors.md) 色
+	- [5.1節](./05-Colors.md#51-色の指定) 色の指定
+		- [5.1.1節](./05-Colors.md#511-RGB) RGB
+		- [5.1.2節](./05-Colors.md#512-色名対応表) 色名対応表
+		- [5.1.3節](./05-Colors.md#513-色名対応表拡張) 色名対応表拡張
+		- [5.1.4節](./05-Colors.md#514-カラーチャート) カラーチャート
+		- [5.1.5節](./05-Colors.md#515-HSV) HSV
+		- [5.1.6節](./05-Colors.md#516-CMYK) CMYK
+		- [5.1.7節](./05-Colors.md#517-RGBA) RGBA
+		- [5.1.8節](./05-Colors.md#518-色数) 色数
+	- [5.2節](./05-Colors.md#52-カラーパレット) カラーパレット
+		- [5.2.1節](./05-Colors.md#521-カラーパレット取得) カラーパレット取得
+		- [5.2.2節](./05-Colors.md#522-GIFの透過化) GIFの透過化
+		- [5.2.3節](./05-Colors.md#523-カラーパレットの変更) カラーパレットの変更
+		- [5.2.4節](./05-Colors.md#524-GIFへの変換) GIFへの変換
+	- [5.3節](./05-Colors.md#53-色調補正) 色調補正
+		- [5.3.1節](./05-Colors.md#531-モノクロ化) モノクロ化
+		- [5.3.2節](./05-Colors.md#532-反転) 反転
+		- [5.3.3節](./05-Colors.md#533-画像調整) 画像調整
+		- [5.3.4節](./05-Colors.md#534-ポスタリゼーション) ポスタリゼーション
+	- [5.4節](./05-Colors.md#54-モード変換) モード変換
+		- [5.4.1節](./05-Colors.md#541-モノクロ変換) モノクロ変換
+		- [5.4.2節](./05-Colors.md#542-ディザ化) ディザ化
+		- [5.4.3節](./05-Colors.md#543-カラー間変換) カラー間変換
+		- [5.4.4節](./05-Colors.md#544-GIFへの変換) GIFへの変換
+		- [5.4.5節](./05-Colors.md#545-RGBAとの相互変換) RGBAとの相互変換
+		- [5.4.6節](./05-Colors.md#546-RGBのRGBA化) RGBのRGBA化
+	- [5.5節](./05-Colors.md#55-バンド単位の操作) バンド単位の操作
+		- [5.5.1節](./05-Colors.md#551-バンド分解) バンド分解
+		- [5.5.2節](./05-Colors.md#552-バンド抽出) バンド抽出
+		- [5.5.3節](./05-Colors.md#553-バンド合成) バンド合成
+		- [5.5.4節](./05-Colors.md#554-ポスタリゼーション再訪) ポスタリゼーション再訪
+- [第6章](./06-Draw.md) グラフィックス描画
+	- [6.1節](./06-Draw.md#61-描画オブジェクト) 描画オブジェクト
+	- [6.2節](./06-Draw.md#62-点) 点
+	- [6.3節](./06-Draw.md#63-線分) 線分
+		- [6.3.1節](./06-Draw.md#631-線分) 線分
+		- [6.3.2節](./06-Draw.md#632-折れ線) 折れ線
+	- [6.4節](./06-Draw.md#64-多角形) 多角形
+		- [6.4.1節](./06-Draw.md#641-長方形) 長方形
+		- [6.4.2節](./06-Draw.md#642-正多角形) 正多角形
+		- [6.4.3節](./06-Draw.md#643-多角形) 多角形
+		- [6.4.4節](./06-Draw.md#644-回転図形) 回転図形
+	- [6.5節](./06-Draw.md#65-円・楕円) 円・楕円
+		- [6.5.1節](./06-Draw.md#651-楕円) 楕円
+		- [6.5.2節](./06-Draw.md#652-円弧) 円弧
+		- [6.5.3節](./06-Draw.md#653-混色図) 混色図
+	- [6.6節](./06-Draw.md#66-透過画像) 透過画像
+	- [6.7節](./06-Draw.md#67-文字列) 文字列
+		- [6.7.1節](./06-Draw.md#671-デフォルトフォント) デフォルトフォント
+		- [6.7.2節](./06-Draw.md#672-TrueTypeフォント) TrueTypeフォント
+		- [6.7.3節](./06-Draw.md#673-テキストサイズ) テキストサイズ
+		- [6.7.4節](./06-Draw.md#674-アンカー) アンカー
+		- [6.7.5節](./06-Draw.md#675-キネティックテキスト) キネティックテキスト
+	- [6.8節](./06-Draw.md#68-まとめて描画) まとめて描画
+- [第7章](./07-ImageProcessing.md) 画像処理
+	- [7.1節](./07-ImageProcessing.md#71-拡大縮小) 拡大縮小
+		- [7.1.1節](./07-ImageProcessing.md#711-リサイズ) リサイズ
+		- [7.1.2節](./07-ImageProcessing.md#712-再標本化方法) 再標本化方法
+		- [7.1.3節](./07-ImageProcessing.md#713-モザイク化) モザイク化
+		- [7.1.4節](./07-ImageProcessing.md#714-アスペクト比保存リサイズ) アスペクト比保存リサイズ
+		- [7.1.5節](./07-ImageProcessing.md#715-サムネイル) サムネイル
+	- [7.2節](./07-ImageProcessing.md#72-回転、反転、アフィン変換) 回転、反転、アフィン変換
+		- [7.2.1節](./07-ImageProcessing.md#721-回転) 回転
+		- [7.2.2節](./07-ImageProcessing.md#722-転置) 転置
+		- [7.2.3節](./07-ImageProcessing.md#723-アフィン変換) アフィン変換
+		- [7.2.4節](./07-ImageProcessing.md#724-はみ出しの折り返し) はみ出しの折り返し
+	- [7.3節](./07-ImageProcessing.md#73-ピクセル操作) ピクセル操作
+		- [7.3.1節](./07-ImageProcessing.md#731-全体処理) 全体処理
+	- [7.4節](./07-ImageProcessing.md#74-フィルタリング) フィルタリング
+		- [7.4.1節](./07-ImageProcessing.md#741-畳み込み演算) 畳み込み演算
+		- [7.4.2節](./07-ImageProcessing.md#742-フィルタ処理) フィルタ処理
+		- [7.4.3節](./07-ImageProcessing.md#743-ImageFilterのフィルタ行列) ImageFilterのフィルタ行列
+		- [7.4.4節](./07-ImageProcessing.md#744-フィルタコンストラクタ) フィルタコンストラクタ
+		- [7.4.5節](./07-ImageProcessing.md#745-自作フィルタ) 自作フィルタ
+		- [7.4.6節](./07-ImageProcessing.md#746-爆裂効果) 爆裂効果
+- [第8章](./08-Blend.md) 画像の合成
+	- [8.1節](./08-Blend.md#81-画像の加算) 画像の加算
+		- [8.1.1節](./08-Blend.md#811-単純加算) 単純加算
+		- [8.1.2節](./08-Blend.md#812-輝度補正付き加算) 輝度補正付き加算
+		- [8.1.3節](./08-Blend.md#813-2色刷り) 2色刷り
+	- [8.2節](./08-Blend.md#82-画像の差分) 画像の差分
+	- [8.3節](./08-Blend.md#83-画像の乗算) 画像の乗算
+	- [8.4節](./08-Blend.md#84-特殊合成機能) 特殊合成機能
+		- [8.4.1節](./08-Blend.md#841-スクリーン) スクリーン
+		- [8.4.2節](./08-Blend.md#842-オーバーレイとハードライト) オーバーレイとハードライト
+		- [8.4.3節](./08-Blend.md#843-ソフトライト) ソフトライト
+		- [8.4.4節](./08-Blend.md#844-比較) 比較
+	- [8.5節](./08-Blend.md#85-アルファ合成) アルファ合成
+	- [8.6節](./08-Blend.md#86-まとめ) まとめ
+- [第9章](./09-Others.md) 他ライブラリとの連携
+	- [9.1節](./09-Others.md#91-tkinter) tkinter
+		- [9.1.1節](./09-Others.md#911-画像表示) 画像表示
+		- [9.1.2節](./09-Others.md#912-画像表示その2) 画像表示その2
+		- [9.1.3節](./09-Others.md#913-Tkによる画像の格子状の配列) Tkによる画像の格子状の配列
+	- [9.2節](./09-Others.md#92-OpenCV) OpenCV
+		- [9.2.1節](./09-Others.md#921-画像表示) 画像表示
+		- [9.2.2節](./09-Others.md#922-凝った画像処理) 凝った画像処理
+		- [9.2.3節](./09-Others.md#923-日本語文字列の描画) 日本語文字列の描画
+		- [9.2.4節](./09-Others.md#924-OpenCVの画像表示) OpenCVの画像表示
+		- [9.2.5節](./09-Others.md#925-ビデオからGIF) ビデオからGIF
+		- [9.2.6節](./09-Others.md#926-GIFからビデオ) GIFからビデオ
+	- [9.3節](./09-Others.md#93-matplotlib) matplotlib
+		- [9.3.1節](./09-Others.md#931-グラフプロット) グラフプロット
+		- [9.3.2節](./09-Others.md#932-Image画像をmatplotlibで開く) Image画像をmatplotlibで開く
+		- [9.3.3節](./09-Others.md#933-ヒストグラムを描く) ヒストグラムを描く
+	- [9.4節](./09-Others.md#94-Windows) Windows
+		- [9.4.1節](./09-Others.md#941-クリップボード) クリップボード
+		- [9.4.2節](./09-Others.md#942-スクリーンキャプチャ) スクリーンキャプチャ
+		- [9.4.3節](./09-Others.md#943-ディスプレイサイズ) ディスプレイサイズ
+- [付録A](./A-install.md) インストール
+	- [付録A.1](./A-install.md#A1-Python) Python
+	- [付録A.2](./A-install.md#A2-ライブラリ) ライブラリ
+	- [付録A.3](./A-install.md#A3-バージョン確認) バージョン確認
+- [付録B](./B-PythonTips.md) Python Tips
+	- [付録B.1](./B-PythonTips.md#B1-リスト内包表記) リスト内包表記
+	- [付録B.2](./B-PythonTips.md#B2-フォーマット済み文字列リテラル) フォーマット済み文字列リテラル
+	- [付録B.3](./B-PythonTips.md#B3-整数除算) 整数除算
+	- [付録B.4](./B-PythonTips.md#B4-ラムダ式) ラムダ式
+	- [付録B.5](./B-PythonTips.md#B5-重複要素の削除) 重複要素の削除
+	- [付録B.6](./B-PythonTips.md#B6-辞書内包表記) 辞書内包表記
+	- [付録B.7](./B-PythonTips.md#B7-シーケンス) シーケンス
+	- [付録B.8](./B-PythonTips.md#B8-リフレクション) リフレクション
+	- [付録B.9](./B-PythonTips.md#B9-参照渡し) 参照渡し
+	- [付録B.10](./B-PythonTips.md#B10-関数を返す関数) 関数を返す関数
+	- [付録B.11](./B-PythonTips.md#B11-アンパック) アンパック
+- [付録C](./C-Source.md) 使用画像
+- [付録D](./D-References.md) 参考文献
+	- [付録D.1](./D-References.md#D1-URLs) URLs
+	- [付録D.2](./D-References.md#D2-書籍) 書籍
+- [付録E](./E-Signatures.md) 関数リスト
+- [付録F](./F-Codes.md) サンプルスクリプトリスト
+
+<img src="./Images/SelfPortrait.png" width=200>  著者近影
