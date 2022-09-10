@@ -13,10 +13,10 @@
 サンプルコードは一部だけ掲載しています。また、本文の章節（3.1.3節など）へのリンクは本文が掲載されていないので404になります。
 
 ご購入はこちらから: 【
-[出版社から](http://www.cutt.co.jp "LINK") |
-[honto](https://honto.jp "LINK") |
-[ヨドバシカメラ](https://www.yodobashi.com/ "LINK") |
-[amazon.co.jp](https://www.amazon.co.jp "LINK")
+[出版社](http://www.cutt.co.jp/book/978-4-87783-525-5.html "LINK") |
+[honto](https://honto.jp/netstore/pd-book_31904103.html "LINK") |
+[ヨドバシカメラ](https://www.yodobashi.com/product/100000009003620044/ "LINK") |
+[amazon.co.jp](https://www.amazon.co.jp/dp/4877835253 "LINK")
 】
 
 <img src="http://cutt.co.jp/book/images/978-4-87783-525-5.png" alt="表紙" width=200>
