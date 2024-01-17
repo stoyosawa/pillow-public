@@ -4,7 +4,7 @@
 
 [「Python + Pillow/PIL - 画像の加工・補正・編集とその自動化」](http://cutt.co.jp/book/978-4-87783-525-5.html "link")（カットシステム、2022年9月）から次の内容を公開しています。
 
-- 目次
+- [目次](#目次 "INTERNAL")
 - 参考文献（[付録D](./D-References.md "INTERNAL")）
 - 取り上げた関数の定義（[付録E](./E-Signatures.md "INTERNAL")）
 - 本書に掲載したコードのリスト（[付録F](./F-Codes.md "INTERNAL")）
